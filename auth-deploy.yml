@@ -3,16 +3,16 @@ kind: Deployment
 metadata:
     name: auth-deployment3
     labels:
-       app: nginx-app
+       app: nginx-app1
 spec:
     replicas: 3
     selector:
        matchLabels:
-           app: nginx-app
+           app: nginx-app1
     template:
        metadata:
            labels:
-             app: nginx-app
+             app: nginx-app1
        spec:
             containers:
             - name: nginx-controller
@@ -24,14 +24,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-     name: auth-svc
+     name: auth-svc1
      labels:
-        app: nginx-app
+        app: nginx-app1
 spec:
     selector:
-        app: nginx-app
+        app: nginx-app1
     type: NodePort
     ports:
-    - nodePort: 31155
+    - nodePort: 31156
       port: 80
       targetPort: 80
