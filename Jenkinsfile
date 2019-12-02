@@ -25,7 +25,7 @@ pipeline {
             		steps {
                 		kubernetesDeploy(
                     			kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG',
-                    			configs: 'flight-booking-kube.yml'
+                    			configs: 'auth-deploy.yml'
                 		)
        }
  }
