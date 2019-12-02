@@ -18,10 +18,10 @@ pipeline {
        stage('Run Container on Jenkins Server'){
           steps {
                sh 'docker login -u skumar24 -p kukku@240892'
-               sh "docker run -p 8089:8080 -d --name my-apll skumar24/webapp:${env.BUILD_ID}"
+               sh "docker run -p 8089:8080 -d --name my-aplli skumar24/webapp:${env.BUILD_ID}"
           }
     }
-       stage('DeployToProduction') {
+       stage('DeployToProduction'){
             		steps {
                 		kubernetesDeploy(
                     			kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG',
