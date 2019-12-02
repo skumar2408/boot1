@@ -16,7 +16,7 @@ spec:
        spec:
             containers:
             - name: nginx-controller
-              image: nginx:latest
+              image: skumar24/webapp:${env.BUILD_ID}
               ports:
               - containerPort: 80
 ---
@@ -32,6 +32,6 @@ spec:
         app: nginx-app
     type: NodePort
     ports:
-    - nodePort: 31150
+    - nodePort: 31155
       port: 80
       targetPort: 80
