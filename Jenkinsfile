@@ -21,5 +21,13 @@ pipeline {
                sh "docker run -p 8087:8080 -d --name my-apll skumar24/webapp:${env.BUILD_ID}"
           }
     }
+       stage('DeployToProduction') {
+            		steps {
+                		kubernetesDeploy(
+                    			kubeconfigId: 'KUBERNETES_CLUSTER_CONFIG',
+                    			configs: 'flight-booking-kube.yml'
+                		)
+       }
  }
+}
 }
