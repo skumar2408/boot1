@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: auth-deployment1
+    name: auth-deployment3
     labels:
        app: nginx-app
 spec:
@@ -16,7 +16,7 @@ spec:
        spec:
             containers:
             - name: nginx-controller
-              image: skumar24/webapp:${env.BUILD_ID}
+              image: skumar24/webapp:$BUILD_NUMBER
               ports:
               - containerPort: 80
 ---
